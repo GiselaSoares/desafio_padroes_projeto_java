@@ -1,18 +1,28 @@
-## Getting Started
+# Singleton para Gerenciamento da Equipe de QA
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto implementa uma um sistema de gerenciamento da equipe de testadores. Ele permite adicionar, remover e acessar informações sobre a equipe de QA.
 
-## Folder Structure
+# Funcionalidades
+Adicionar membros de teste à equipe
+Remover membros de teste à equipe
+Acessar lista de membros da equipe
 
-The workspace contains two folders by default, where:
+# Como usar
+Use a classe `TestTeamManager` para gerenciar a equipe de testadores.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+# Códigos específicos
+// Adicionar novo membro à equipe
+TestTeamManager manager = TestTeamManager.getInstance();
+manager.addQaTester(qa);
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+// Remover um membro da equipe
+TestTeamManager manager = TestTeamManager.getInstance();
+manager.removeQaTester(qa);
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+// Obter a lista de membros na equipe
+TestTeamManager manager = TestTeamManager.getInstance();
+List<QaTester> team = manager.getQaTesters();
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+for (QaTester qa : team) {
+    System.out.println("Nome: " + qa.getName() + ", ID: " + qa.getMemberId());
+}
